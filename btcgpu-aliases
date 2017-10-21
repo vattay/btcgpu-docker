@@ -1,0 +1,6 @@
+#!/bin/sh
+
+IMAGE='oxide/btcgpu-docker'
+
+alias btcgpu-docker-imbuild='docker build -t $IMAGE .'
+alias btcgpu-docker-here='docker run -it --rm -v $(pwd):/root/workspace/BTCGPU $IMAGE'

@@ -13,13 +13,10 @@ RUN apt-get update && apt-get install -y \
     bsdmainutils \
     python3
 
-WORKDIR /root
-
-RUN git clone https://github.com/BTCGPU/BTCGPU.git 
-
-WORKDIR /root/BTCGPU/depends/
-RUN make
-
-WORKDIR /root/BTCGPU/ 
+WORKDIR /root/
+RUN git clone https://github.com/BTCGPU/BTCGPU
+WORKDIR /root/BTCGPU/depends
+RUN make -j 4
+WORKDIR /root/BTCGPU
 
 CMD ["/bin/bash"]
