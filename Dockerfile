@@ -22,6 +22,6 @@ RUN make
 WORKDIR /root/BTCGPU
 RUN ./autogen.sh \
     && ./configure --prefix=/root/BTCGPU/depends/x86_64-pc-linux-gnu/ \
-    && make -j $THREADS
+    && make -j 4
 
 CMD ["/bin/bash"]
