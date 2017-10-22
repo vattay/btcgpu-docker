@@ -10,8 +10,11 @@ docs details about building bitcoin.
 First of all, check the Dockerfile to see exactly what imports and process is used.
 
 Next, you can just jump right into bash with a ready built bgold for running tests or examining deps by:
+
     ./exec.sh
 
 If you want to change the Dockerfile, you will have to run:
+
     ./build.sh
+    
 This will rebuild everything after the change, which can take quite some time...
