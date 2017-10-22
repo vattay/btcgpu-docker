@@ -1,0 +1,3 @@
+[submodule "BTCGPU"]
+	path = BTCGPU
+	url = https://github.com/BTCGPU/BTCGPU.git
