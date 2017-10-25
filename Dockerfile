@@ -38,4 +38,4 @@ COPY --from=builder /root/BTCGPU/src/bitcoin-tx /usr/bin/bitcoing-tx
 
 VOLUME ["/root/.bitcoingold"]
 
-CMD ["/bin/bash"]
+CMD ["bgoldd", "-server", "-testnet", "-printtoconsole", "-addnode=xix.btcgpu.site"]
