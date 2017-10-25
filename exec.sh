@@ -1,4 +1,4 @@
 #!/bin/bash
 
 source .btcgpu-docker-env
-docker run -it --rm $BTCGPU_DOCKER_IMAGE 
+docker run -it --rm $BG_IMAGE

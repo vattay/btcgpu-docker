@@ -1,3 +1,3 @@
 #!/bin/bash
 
-export BTCGPU_DOCKER_IMAGE="oxide/btcgpu-docker"
+export BG_IMAGE="oxide/btcgpu-docker:btcgpu-master"
