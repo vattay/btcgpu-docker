@@ -23,11 +23,20 @@ RUN make
 
 WORKDIR /root/BTCGPU
 COPY BTCGPU/ ./
-RUN ./autogen.sh \
-    && ./configure --prefix=/tmp/btcgpu/depends/x86_64-pc-linux-gnu/ --disable-shared \
-    && make 
+RUN ./autogen.sh && ./configure \
+    --prefix=/tmp/btcgpu/depends/x86_64-pc-linux-gnu/ \
+    --disable-shared \
+    --without-gui \
+    && make -j$(nproc)
 
+CMD ["bin/bash", "-l"]
+
+
+FROM builder as tester
+# Test checkpoint
 RUN make check
+CMD ["/bin/bash", "-l"]
+
 
 FROM ubuntu:16.04 as runner
 # Slim run container.
@@ -39,4 +48,4 @@ COPY --from=builder /root/BTCGPU/src/bitcoin-tx /usr/bin/bitcoing-tx
 
 VOLUME ["/root/.bitcoingold"]
 
-CMD ["bgoldd", "-regtest", "printtoconsole"] 
+CMD ["bgoldd", "--regtest", "--printtoconsole"] 

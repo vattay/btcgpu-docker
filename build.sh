@@ -1,4 +1,4 @@
 #!/bin/bash
 
 source .btcgpu-docker-env
-docker build -t $BG_IMAGE .
+docker build -t $BG_IMAGE $@ .

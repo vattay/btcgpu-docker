@@ -1,3 +1,3 @@
 #!/bin/bash
 
-export BG_IMAGE="oxide/btcgpu-docker:starbuck-bg-master-testnet"
+export BG_IMAGE="oxide/btcgpu-docker:master-regtest"
