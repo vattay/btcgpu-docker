@@ -21,15 +21,16 @@ COPY BTCGPU/depends/ /tmp/btcgpu/depends
 WORKDIR /tmp/btcgpu/depends
 RUN make
 
-WORKDIR /root/BTCGPU
-COPY BTCGPU/ ./
+WORKDIR /root/BTCGPU-docker
+COPY . ./
+WORKDIR /root/BTCGPU-docker/BTCGPU
 RUN ./autogen.sh && ./configure \
     --prefix=/tmp/btcgpu/depends/x86_64-pc-linux-gnu/ \
     --disable-shared \
     --without-gui \
     && make -j$(nproc)
 
-CMD ["bin/bash", "-l"]
+CMD ["/bin/bash", "-l"]
 
 
 FROM builder as tester
@@ -42,9 +43,9 @@ FROM ubuntu:16.04 as runner
 # Slim run container.
 
 WORKDIR /opt/BTCGPU
-COPY --from=builder /root/BTCGPU/src/bgoldd /usr/bin/bgoldd
-COPY --from=builder /root/BTCGPU/src/bgold-cli /usr/bin/bgold-cli
-COPY --from=builder /root/BTCGPU/src/bitcoin-tx /usr/bin/bitcoing-tx
+COPY --from=tester /root/BTCGPU-docker/BTCGPU/src/bgoldd /usr/bin/bgoldd
+COPY --from=tester /root/BTCGPU-docker/BTCGPU/src/bgold-cli /usr/bin/bgold-cli
+COPY --from=tester /root/BTCGPU-docker/BTCGPU/src/bitcoin-tx /usr/bin/bitcoing-tx
 
 VOLUME ["/root/.bitcoingold"]
 
