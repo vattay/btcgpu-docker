@@ -30,6 +30,7 @@ RUN ./autogen.sh \
 RUN make check
 
 FROM ubuntu:16.04 as runner
+# Slim run container.
 
 WORKDIR /opt/BTCGPU
 COPY --from=builder /root/BTCGPU/src/bgoldd /usr/bin/bgoldd
@@ -38,4 +39,4 @@ COPY --from=builder /root/BTCGPU/src/bitcoin-tx /usr/bin/bitcoing-tx
 
 VOLUME ["/root/.bitcoingold"]
 
-CMD ["bgoldd", "-server", "-testnet", "-printtoconsole", "-addnode=xix.btcgpu.site"]
+CMD ["bgoldd", "-regtest", "printtoconsole"] 
