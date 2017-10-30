@@ -1,5 +1,9 @@
 # btcgpu-build
+Docker build, test, and run containers for Bitcoin Gold aka BTCGPU.
+
 WIP: Testnet is not up yet, you can only run local "regtests"
+
+Note that the chain and wallet will be presisted to a docker volume called "btcgpu-vol.
 
 ## How to use
 ### Turbo Mode
