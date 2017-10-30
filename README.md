@@ -1,25 +1,39 @@
 # btcgpu-build
 WIP: Testnet is not up yet, you can only run local "regtests"
 
-Docker build container for bitcoin gold, aka BTCGPU, aka BGold... It's pretty tricky to get all your ducks in a row building bitcoin core, let alone, bgold, a new fork with lots of moving parts.
-
-Use this image to bring up the latest (currently manually checked out as a submodule) bgold, prebuilt and ready to run.
-
-I hope this gets new volunteers up to speed quicker. The Dockerfile captures some of the "oral tradition" of building bitcoin.
-
 ## How to use
-First of all, check the Dockerfile to see exactly what imports and process is used.
+### Turbo Mode
+Pull the slim image
 
-Get the image first.
+    docker pull oxide/btcgpu-docker:master-regtest
 
-    docker pull oxide/btcgpu-docker 
+Run the bitcon gold node in a detached container in the background.
 
-Next, you can just jump right into bash with a ready built bgold for running tests or examining deps by:
+    ./run.sh
+    
+You can then play with this node on bash with something like:
 
-    ./exec.sh
+    docker exec -it <container_id> /bin/bash -l
+    bitcoin-cli -regtest generate 101
+    bitcoin-cli -regtest getbalance
 
-If you want to change the Dockerfile, you will have to run:
+### Dev and Test Mode
+You can get the huge full build environment if you want to compile, test, or debug.
+
+    docker pull oxide/btcgpu-docker:master-regtest-dev
+    
+Then you could do something like run tests. This will drop you into bash in the container, in the bitcoin gold source directory.
+
+    ./run-dev.sh
+    make check
+    
+### Building
+Note that this can rebuild all the dependencies from source, which can take quite some time...
+
+To build the development image with all the build and test dependencies
+
+    ./build-dev.sh
+    
+To build the slim run image
 
     ./build.sh
-    
-Note that this can rebuild all the dependencies from source, which can take quite some time...
