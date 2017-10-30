@@ -14,8 +14,8 @@ Run the bitcon gold node in a detached container in the background.
 You can then play with this node on bash with something like:
 
     docker exec -it <container_id> /bin/bash -l
-    bitcoin-cli -regtest generate 101
-    bitcoin-cli -regtest getbalance
+    bgold-cli -regtest generate 101
+    bgold-cli -regtest getbalance
 
 ### Dev and Test Mode
 You can get the huge full build environment if you want to compile, test, or debug.
