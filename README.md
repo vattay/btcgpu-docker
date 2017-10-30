@@ -1,4 +1,6 @@
 # btcgpu-build
+WIP: Testnet is not up yet, you can only run local "regtests"
+
 Docker build container for bitcoin gold, aka BTCGPU, aka BGold... It's pretty tricky to get all your ducks in a row building bitcoin core, let alone, bgold, a new fork with lots of moving parts.
 
 Use this image to bring up the latest (currently manually checked out as a submodule) bgold, prebuilt and ready to run.
