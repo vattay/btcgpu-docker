@@ -1,3 +1,4 @@
 #!/bin/bash
 
 export BG_IMAGE="oxide/btcgpu-docker:master-regtest"
+export BG_PORT=18444
