@@ -49,4 +49,4 @@ COPY --from=tester /root/BTCGPU-docker/BTCGPU/src/bitcoin-tx /usr/bin/bitcoing-t
 
 VOLUME ["/root/.bitcoingold"]
 
-CMD ["bgoldd", "--printtoconsole"] 
+CMD ["bgoldd", "--printtoconsole", "--testnet"] 

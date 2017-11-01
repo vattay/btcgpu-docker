@@ -1,4 +1,4 @@
 #!/bin/bash
 
-export BG_IMAGE="oxide/btcgpu-docker:master"
-export BG_PORT=8338
+export BG_IMAGE="oxide/btcgpu-docker:testnet"
+export BG_PORT=18338
