@@ -41,3 +41,7 @@ To build the development image with all the build and test dependencies
 To build the slim run image
 
     ./build.sh
+    
+If this image was useful and hopefully profitable for you, please consider donating, I am not part of Bitcoin Gold core dev team or the premine, just an enthusiast.
+
+Bitcoin: 1GXyfqegNFWGmXddrxN1bsK2XfsrRjnPWq
