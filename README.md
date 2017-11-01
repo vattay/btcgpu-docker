@@ -9,7 +9,7 @@ Note that the chain and wallet will be presisted to a docker volume called "btcg
 ### Turbo Mode
 Pull the slim image
 
-    docker pull oxide/btcgpu-docker:master
+    docker pull oxide/btcgpu-docker:testnet
 
 Run the bitcon gold node in a detached container in the background.
 
