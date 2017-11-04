@@ -1,9 +1,5 @@
 # btcgpu-build
-Docker build, test, and run containers for Bitcoin Gold aka BTCGPU.
-
-WIP: Testnet is not up yet, you can only run local "regtests"
-
-Note that the chain and wallet will be presisted to a docker volume called "btcgpu-vol.
+Docker container for BTCGPU / Bitcoin Gold testnet.
 
 ## How to use
 ### Turbo Mode
@@ -17,14 +13,13 @@ Run the bitcon gold node in a detached container in the background.
     
 You can then play with this node on bash with something like:
 
-    docker exec -it <container_id> /bin/bash -l
-    bgold-cli -regtest generate 101
-    bgold-cli -regtest getbalance
+    ./exec.sh
+    bgold-cli getinfo
 
 ### Dev and Test Mode
 You can get the huge full build environment if you want to compile, test, or debug.
 
-    docker pull oxide/btcgpu-docker:master-regtest-dev
+    docker pull oxide/btcgpu-docker:testnet-dev
     
 Then you could do something like run tests. This will drop you into bash in the container, in the bitcoin gold source directory.
 
