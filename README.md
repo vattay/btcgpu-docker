@@ -3,6 +3,11 @@ Docker container for BTCGPU / Bitcoin Gold testnet.
 
 ## How to use
 ### Turbo Mode
+Clone this repo and enter directory
+
+    git clone https://github.com/vattay/btcgpu-docker.git
+    cd btcgpu-docker
+
 Pull the slim image
 
     docker pull oxide/btcgpu-docker:testnet
