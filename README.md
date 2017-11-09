@@ -8,11 +8,7 @@ Clone this repo and enter directory
     git clone https://github.com/vattay/btcgpu-docker.git
     cd btcgpu-docker
 
-Pull the slim image
-
-    docker pull oxide/btcgpu-docker:testnet
-
-Run the bitcon gold node in a detached container in the background.
+Run the bitcoin gold full node in a detached container in the background.
 
     ./run.sh
     
