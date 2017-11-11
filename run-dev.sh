@@ -2,5 +2,4 @@
 
 source .btcgpu-docker-env
 
-docker run -it -v btcgpu-vol:/root/.bitcoingold --rm ${BG_IMAGE}-dev 
-    
+docker run -it -v $BG_VOL:/root/.bitcoingold --rm ${BG_IMAGE}-dev 

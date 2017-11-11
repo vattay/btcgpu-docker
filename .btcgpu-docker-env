@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export BG_CONTAINER="bgold-testnet"
-export BG_IMAGE="oxide/btcgpu-docker:testnet"
-export BG_PORT=18338
-export BG_RPC_PORT=18445
+export BG_CONTAINER="bgold"
+export BG_IMAGE="oxide/btcgpu-docker:mainnet"
+export BG_VOL="btcgpu-vol"
+export BG_PORT=8338
+export BG_RPC_PORT=8332
