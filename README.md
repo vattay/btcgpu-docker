@@ -2,7 +2,7 @@
 Docker container for BTCGPU / Bitcoin Gold mainnet full node.
 See the testnet branch for a similar testnet full node.
 
-##Requirements
+## Requirements
 Docker
 At least 160GB of free disk space.
 
